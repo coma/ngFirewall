@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="app">
+    <head>
+        <title>ngFirewall</title>
+
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+
+        <script src="dist/ngFirewall.min.js"></script>
+
+        <script src="app.js"></script>
+
+        <script src="controller/MainController.js"></script>
+        <script src="controller/LoginController.js"></script>
+        <script src="controller/SecureController.js"></script>
+        <script src="controller/AlmostController.js"></script>
+
+    </head>
+    <body>
+        <section ng-view></section>
+    </body>
+</html>
