@@ -13,7 +13,7 @@ ngFirewall.config(function($provide, $httpProvider) {
 
                 return config || $q.when(config);
             }
-        }
+        };
     });
 
     $httpProvider.interceptors.push('firewallInterceptor');

@@ -6,7 +6,7 @@ var _httpFirewall  = {};
 
 var isResourceDenied = function(user, resource, firewall) {
 
-    var pattern, roles;
+    var pattern, roles = null;
 
     for (pattern in firewall) {
 
@@ -17,7 +17,7 @@ var isResourceDenied = function(user, resource, firewall) {
         }
     }
 
-    return roles && !roles.some(function(role) {
+    return roles !== null && !roles.some(function(role) {
 
             return user.hasRole(role);
         });
