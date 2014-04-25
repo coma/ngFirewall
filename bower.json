@@ -15,7 +15,8 @@
     "ignore"      : [
         "**/.*", "node_modules", "bower_components", "test", "tests"
     ],
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {
         "angular"         : "^1.3",
         "angular-route"   : "^1.3",
         "angular-mocks"   : "^1.3"
