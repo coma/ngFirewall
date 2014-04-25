@@ -37,7 +37,7 @@ var isResourceDenied = function(user, resource, firewall) {
 
     if (test.constructor === Function) {
 
-        return test(user, resource);
+        return !test(user, resource);
     }
 
     return false;
