@@ -1,6 +1,7 @@
 (function() {
 
     var app = angular.module('app', ['ngRoute', 'ngFirewall']);
+    var n   = 0;
 
     app.config(['$routeProvider', '$authProvider', function($routeProvider, $authProvider) {
 
@@ -30,7 +31,11 @@
                 '^/secure': ['user']
             })
             .setHTTPFirewall({
-                '^/secret': ['admin']
+                '^/secret': ['admin'],
+                '^/odd'   : function(user, resource) {
+
+                    return ++n % 2 > 0;
+                }
             });
     }]);
 
@@ -41,7 +46,20 @@
         $scope.ask = function() {
 
             $http.get('/secret')
-                .success(function(data) {
+                .success(function() {
+
+                    alert('There is no secret...');
+                })
+                .error(function() {
+
+                    alert('You are not the guy...');
+                });
+        };
+
+        $scope.odd = function() {
+
+            $http.get('/odd')
+                .success(function() {
 
                     alert('There is no secret...');
                 })

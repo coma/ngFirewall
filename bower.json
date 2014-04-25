@@ -2,7 +2,7 @@
     "name"           : "ngFirewall",
     "description"    : "Angular service to avoid routes from being loaded and ajax calls from being made without the required permissions.",
     "homepage"       : "https://github.com/coma/ngFirewall",
-    "version"        : "0.0.3",
+    "version"        : "0.0.4",
     "license"        : "MIT",
     "private"        : false,
     "main"           : "dist/ngFirewall.min.js",

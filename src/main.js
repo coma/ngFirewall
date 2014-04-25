@@ -6,19 +6,39 @@ var _httpFirewall  = {};
 
 var isResourceDenied = function(user, resource, firewall) {
 
-    var pattern, roles = null;
+    var pattern, test = null;
 
     for (pattern in firewall) {
 
         if ((new RegExp(pattern)).test(resource)) {
 
-            roles = firewall[pattern];
+            test = firewall[pattern];
             break;
         }
     }
 
-    return roles !== null && !roles.some(function(role) {
+    if (test === null) {
 
-            return user.hasRole(role);
-        });
+        return false;
+    }
+
+    if (test.constructor === String) {
+
+        test = [test];
+    }
+
+    if (test.constructor === Array) {
+
+        return !test.some(function(role) {
+
+                return user.hasRole(role);
+            });
+    }
+
+    if (test.constructor === Function) {
+
+        return test(user, resource);
+    }
+
+    return false;
 };

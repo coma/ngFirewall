@@ -30,4 +30,9 @@ app.get('/secret', function(request, response) {
     response.send();
 });
 
+app.get('/odd', function(request, response) {
+
+    response.send();
+});
+
 app.listen(1337);
