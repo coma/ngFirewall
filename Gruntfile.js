@@ -11,9 +11,11 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'dist/ngFirewall.min.js': [
-                        'src/VoterInterface.js',
-                        'src/FirewallVoter.js',
-                        'src/ngFirewall.js'
+                        'src/main.js',
+                        'src/auth.js',
+                        'src/user.js',
+                        'src/config.js',
+                        'src/run.js'
                     ]
                 }
             }

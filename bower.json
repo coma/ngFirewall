@@ -1,10 +1,11 @@
 {
     "name"           : "ngFirewall",
-    "description"    : "Angular service to avoid routes from being loaded and ajax or socket calls from being made without the required permissions.",
+    "description"    : "Angular service to avoid routes from being loaded and ajax calls from being made without the required permissions.",
     "homepage"       : "https://github.com/coma/ngFirewall",
-    "version"        : "0.0.1",
+    "version"        : "0.0.2",
     "license"        : "MIT",
     "private"        : false,
+    "main"           : "dist/ngFirewall.min.js",
     "authors"     : [
         "Eduardo García Sanz <eduardo@comakai.com>"
     ],
@@ -16,7 +17,6 @@
     ],
     "dependencies": {
         "angular"         : "~1.3",
-        "angular-route"   : "~1.3",
-        "socket.io-client": "~1.0"
+        "angular-route"   : "~1.3"
     }
 }

@@ -2,22 +2,43 @@
 <html ng-app="app">
     <head>
         <title>ngFirewall</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section ng-view></section>
+
+        <script type="text/ng-template" id="main.html">
+            <h1>Main</h1>
+            <div>
+                <p>
+                    <a href="#/secure">take me to the secure area!</a>
+                </p>
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="secure.html">
+            <h1>Secure</h1>
+            <div>
+                <p><a ng-click="ask()">tell me the secret!</a> or <a href="#/logout">take me out!</a></p>
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="login.html">
+            <h1>Login</h1>
+            <div>
+                <form ng-submit="login()">
+                    <input type="text" placeholder="Username" ng-model="data.username">
+                    <input type="password" placeholder="Password" ng-model="data.password">
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </script>
 
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
 
         <script src="dist/ngFirewall.min.js"></script>
 
         <script src="app.js"></script>
-
-        <script src="controller/MainController.js"></script>
-        <script src="controller/LoginController.js"></script>
-        <script src="controller/SecureController.js"></script>
-        <script src="controller/AlmostController.js"></script>
-
-    </head>
-    <body>
-        <section ng-view></section>
     </body>
 </html>
