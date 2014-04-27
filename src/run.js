@@ -1,4 +1,4 @@
-ngFirewall.run(function($rootScope, $auth, $user, $location) {
+ngFirewall.run(['$rootScope', '$auth', '$user', '$location', function($rootScope, $auth, $user, $location) {
 
     $rootScope.$on('$locationChangeStart', function(event, next) {
 
@@ -11,4 +11,4 @@ ngFirewall.run(function($rootScope, $auth, $user, $location) {
             $location.path(_logoutPath);
         }
     });
-});
+}]);

@@ -1,6 +1,6 @@
-ngFirewall.config(function($provide, $httpProvider) {
+ngFirewall.config(['$provide', '$httpProvider', function($provide, $httpProvider) {
 
-    $provide.factory('firewallInterceptor', function($q, $user) {
+    $provide.factory('firewallInterceptor', ['$q', '$user', function($q, $user) {
         return {
             'request': function(config) {
 
@@ -14,7 +14,7 @@ ngFirewall.config(function($provide, $httpProvider) {
                 return config || $q.when(config);
             }
         };
-    });
+    }]);
 
     $httpProvider.interceptors.push('firewallInterceptor');
-});
+}]);

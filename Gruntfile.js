@@ -28,8 +28,7 @@ module.exports = function(grunt) {
         uglify : {
             options: {
                 banner : '/*! <%= pkg.name %> v<%= pkg.version %> | <%= pkg.homepage %> | <%= pkg.license %> license */\n',
-                enclose: {},
-                mangle : false
+                enclose: {}
             },
             dist: {
                 files: {
